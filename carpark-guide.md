@@ -446,26 +446,25 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+![Added methods to the car park class](images/carpark_methods.jpg)
+
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_
->      `Answer here...`
+>      `CarPark class because it is an attribute of displays, which is in the CarPark class, and gets sent out to the Display class`
 >    - _The current temperature_
->      `Answer here...`
+>      `CarPark because it is an attribute of displays, which is in the CarPark class, and gets sent out to the Display class `
 >    - _The time_
->      `Answer here...`
+>      `CarPark because it is an attribute of displays, which is in the CarPark class, and gets sent out to the Display class `
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `A property acts like an attribute, but is used to protect values so it cannot be set anything outside of the method`. An attribute can however be modified by a Setter.
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `We used a dictionary becuase it stores the data in key value pairs, and is mutable so we can easily access the data as well as modify as required. However, this also means that we will not be able to support duplicate values `
 
 #### Add a detect vehicle method to the Sensor class
 
