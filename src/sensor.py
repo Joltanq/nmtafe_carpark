@@ -36,3 +36,7 @@ class ExitSensor(Sensor):
     def _scan_plate(self):
         return random.choice(self.car_park.plates)
 
+#     @raf what can other unit tests can i write besides the instantiation?
+#  because add_car has already been tested in the test_carpark class, should i just be testing the the incoming vehicle emssage is retruned?
+
+

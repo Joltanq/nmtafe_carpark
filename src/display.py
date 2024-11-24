@@ -6,12 +6,17 @@ class Display:
         self.car_park = car_park
 
     def __str__(self):
-        return f'Display {self.id}: Welcome to the car park'
+        # return f'Display {self.id}: Welcome to the car park'
+        return f'Display {self.id}: {self.message}'
 
     def update(self,data):
         for key, value in data.items():
-            print(f"{key}: {value}")
+            # print(f"{key}: {value}")
+            # self.update(data.values())
+            data[key] = value
 
-if __name__ == "__main__":
-    d = Display()
-    print(d)
+d = Display(1, "Welcome to the car park", True, "asd")
+print(d)
+d.update({"message":"Goodbye"})
+
+print(d)

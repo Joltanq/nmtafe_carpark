@@ -10,7 +10,7 @@ class CarPark:
         self.displays = displays or []
 
     def __str__(self):
-        return f'Car park at {self.location} with {self.capacity} bays'
+        return f'Car park at {self.location} with {self.capacity} bays now has {self.available_bays} free bays'
 
     def register(self, component):
         if not isinstance(component, (Sensor, Display)):
@@ -34,6 +34,10 @@ class CarPark:
         for display in self.displays:
             display.update(data)
         return data
+
+        # for display in self.displays:
+        #     print(f"updating display {display.id}")
+        #     display.update(f"Bays:" {self.capacity} - len({self.plates}) )
 
     @property
     def available_bays(self):
