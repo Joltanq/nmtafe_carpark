@@ -12,6 +12,6 @@ class Display:
         for key, value in data.items():
             print(f"{key}: {value}")
 
-
-d = Display()
-print(d)
+if __name__ == "__main__":
+    d = Display()
+    print(d)

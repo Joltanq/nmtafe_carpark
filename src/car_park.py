@@ -26,7 +26,7 @@ class CarPark:
         self.update_displays()
 
     def remove_car(self, plate):
-        self.plates.pop(plate)
+        self.plates.remove(plate)
         self.update_displays()
 
     def update_displays(self):
@@ -42,9 +42,3 @@ class CarPark:
         else:
             return self.capacity - len(self.plates)
 
-
-c = CarPark()
-# c.add_car("123-ASD")
-c.add_car("623-SDA")
-print(c.update_displays())
-print(c.available_bays)
