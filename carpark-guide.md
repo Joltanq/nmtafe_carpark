@@ -65,19 +65,19 @@ This guide provides detailed step-by-step instructions for completing the projec
 **Additional evidencing:**
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
-```markdown
-![Initial commit](images/mu_image.png)
-```
+![Initial commit](images\initial_commit.jpg)
+
+
 
 ### Identify classes, methods, and attributes
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes | Methods |
-| ---------- | ---------- | ------- |
-| `CarPark`    |            |         |
-| `Sensor`     |            |         |
-| `Display`    |            |         |
+| Class Name | Attributes                                   | Methods                                       |
+| ---------- |----------------------------------------------|-----------------------------------------------|
+| `CarPark`    | location, capacity, plates, sensors,displays | register, add_car,remove_car, update_displays |
+| `Sensor`     | id, is_active, car_park                      | update_car_park, detect_vehicle, scan_plate   |
+| `Display`    | id, message, is_on, car_park                 | update                                        |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
