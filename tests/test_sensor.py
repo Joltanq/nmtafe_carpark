@@ -15,7 +15,7 @@ class TestExitSensor(unittest.TestCase):
     def setUp(self):
         self.exit_sensor = ExitSensor(1, True, CarPark(...))
 
-    def test_entry_sensor_with_all_attributes(self):
+    def test_exit_sensor_with_all_attributes(self):
         self.assertIsInstance(self.exit_sensor, ExitSensor)
 
 
