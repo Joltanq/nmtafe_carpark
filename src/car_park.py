@@ -2,12 +2,13 @@ from sensor import Sensor
 from display import Display
 
 class CarPark:
-    def __init__(self,location = "Unknown", capacity = 3, plates = None, sensors = None, displays = None):
+    def __init__(self,location = "Unknown", capacity = 3, plates = None, sensors = None, displays = None, log_file = "log.txt"):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
+        self.log_file = log_file
 
     def __str__(self):
         return f'Car park at {self.location} with {self.capacity} bays now has {self.available_bays} free bays'
