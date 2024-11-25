@@ -766,7 +766,12 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
-   ![Unit tests](images/run_unit_tests_carpark.jpg)
+Before the fix
+![before_fix.jpg](images/before_fix.jpg)
+
+After the fix
+![fixed_display.jpg](images/fixed_display.jpg)
+
 
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.
