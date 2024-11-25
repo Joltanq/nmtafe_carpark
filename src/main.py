@@ -20,3 +20,4 @@ for _ in range(10):
 
 for _ in range(2):
     exit_sensor.detect_vehicle()
+
