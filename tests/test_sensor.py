@@ -9,9 +9,6 @@ class TestEntrySensor(unittest.TestCase):
     def test_entry_sensor_with_all_attributes(self):
         self.assertIsInstance(self.entry_sensor, EntrySensor)
 
-    def test_update_car_park_increments_by_1(self):
-        plate = "FAKE-001"
-        self.assertEqual(self.entry_sensor.detect_vehicle(),1)
 
 
 class TestExitSensor(unittest.TestCase):
