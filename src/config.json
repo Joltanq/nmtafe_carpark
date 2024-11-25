@@ -1,0 +1,9 @@
+{
+  "capacity": 100,
+  "location": "Moondalup",
+  "plates": "",
+  "sensors": "",
+  "displays": "",
+  "log_file":"moondalup.txt"
+}
+

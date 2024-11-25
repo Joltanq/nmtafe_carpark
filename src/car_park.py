@@ -2,9 +2,10 @@ from sensor import Sensor
 from display import Display
 from pathlib import Path
 from datetime import datetime # we'll use this to timestamp entries
+import json
 
 class CarPark:
-    def __init__(self,location = "Unknown", capacity = 3, plates = None, sensors = None, displays = None, log_file = Path("log.txt")):
+    def __init__(self,location = "Unknown", capacity = 3, plates = None, sensors = None, displays = None, log_file = Path("agw.txt")):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
@@ -44,6 +45,23 @@ class CarPark:
     def _log_car_activity(self, plate, action):
         with self.log_file.open("a") as f:
             f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
+
+    def write_config(self):
+        with open("config.json","w") as f:
+            json.dump({"location":self.location, "capacity": self.capacity, "log_file": str(self.log_file)},f)
+
+
+    @classmethod
+    def from_config(cls,config_file = Path("config.json")):
+        config_file = config_file if isinstance(config_file,Path) else Path(config_file)
+        with config_file.open() as f:
+            config = json.load(f)
+        return cls(location = config["location"],
+                   capacity= config["capacity"],
+                   plates = config["plates"],
+                   sensors = config["sensors"],
+                   displays = config["displays"],
+                   log_file = config["log_file"])
 
     @property
     def available_bays(self):

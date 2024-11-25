@@ -1,3 +1,4 @@
+import json
 import unittest
 from car_park import CarPark
 from pathlib import  Path
@@ -20,7 +21,7 @@ class TestCarPark(unittest.TestCase):
           self.assertTrue(Path("log.txt").exists())
 
       def tearDown(self):
-          Path("new_log.txt").unlink(missing_ok = True)
+          Path("log.txt").unlink(missing_ok = True)
 
       def test_car_logged_when_entering(self):
           self.car_park.add_car("NEW-001")
@@ -71,6 +72,24 @@ class TestCarPark(unittest.TestCase):
          with self.assertRaises(TypeError):
             self.car_park.register("Not a Sensor or Display")
 
+      def test_create_car_park_from_config(self):
+          config_data = {
+              "location": "Default Garage",
+              "capacity": 50,
+              "plates": [],
+              "sensors": [],
+              "displays": [],
+              "log_file": "default_log.txt"
+          }
+
+          with open("test_config.json","w") as f:
+              json.dump(config_data,f)
+
+
+          self.car_park = CarPark.from_config("test_config.json")
+          self.assertIsInstance(self.car_park, CarPark)
+
+          Path("test_config.json").unlink(missing_ok=True)
 
 
 if __name__ == "__main__":
