@@ -20,9 +20,3 @@ for _ in range(10):
 
 for _ in range(2):
     exit_sensor.detect_vehicle()
-# exit.detect_vehicle()
-# print(c)
-#
-# c.register(d)
-# d.update({"message":"Goodbye"})
-print(car_park.available_bays)
