@@ -5,7 +5,7 @@ from datetime import datetime # we'll use this to timestamp entries
 import json
 
 class CarPark:
-    def __init__(self,location = "Unknown", capacity = 3, plates = None, sensors = None, displays = None, log_file = Path("agw.txt")):
+    def __init__(self,location = "Unknown", capacity = 3, plates = None, sensors = None, displays = None, log_file = "test.txt"):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
@@ -28,16 +28,17 @@ class CarPark:
 
     def add_car(self, plate):
         self.plates.append(plate)
-        self.update_displays()
+        self.update_displays({"The number of available bays is ": self.available_bays, "The current temperature is": 25})
         self._log_car_activity(plate, "entered")
 
     def remove_car(self, plate):
         self.plates.remove(plate)
-        self.update_displays()
+        self.update_displays({"The number of available bays is ": self.available_bays, "The current temperature is": 25})
         self._log_car_activity(plate, "exited")
 
-    def update_displays(self):
-        data = {"available_bays": self.available_bays, "temperature": 25, "message": "Welcome"}
+    def update_displays(self,data={}):
+        self.data = data
+        # data = {"The number of available bays is ": self.available_bays, "The current temperature is": 25}
         for display in self.displays:
             display.update(data)
         return data

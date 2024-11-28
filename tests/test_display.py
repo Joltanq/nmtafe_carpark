@@ -1,10 +1,12 @@
 import unittest
+from unittest.mock import MagicMock
 from display import Display
 from car_park import CarPark
 
 class TestDisplay(unittest.TestCase):
     def setUp(self):
-        self.display = Display(1, "Welcome to the car park", True, CarPark(...))
+        mock_car_park = MagicMock(spec= CarPark)
+        self.display = Display(1, "Welcome to the car park", True, mock_car_park)
 
     def test_display_with_all_attributes(self):
         self.assertIsInstance(self.display,Display)
@@ -15,7 +17,9 @@ class TestDisplay(unittest.TestCase):
 
     def test_update(self):
         self.display.update({"message": "Goodbye"})
+        print(self.display.message)
         self.assertEqual(self.display.message,"Goodbye")
+
 
 
 if __name__ == "__main__":
