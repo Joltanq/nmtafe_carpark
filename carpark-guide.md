@@ -65,9 +65,8 @@ This guide provides detailed step-by-step instructions for completing the projec
 **Additional evidencing:**
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
-![Initial commit](images\initial_commit.jpg)
 
-
+![initial_commit.jpg](images\initial_commit.jpg)
 
 ### Identify classes, methods, and attributes
 
@@ -108,7 +107,7 @@ Include a screenshot of your GitHub repository `src/` directory **after** you ha
 
 ![Added stubs for classes](images/added_stubs.jpg)
 
-### Add constructors and attributes to the classes
+### Add constructors and attributes to the classes    
 
 #### CarPark class
 
