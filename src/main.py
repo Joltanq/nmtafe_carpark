@@ -14,7 +14,6 @@ car_park = CarPark.from_config("config.json")
 entry_sensor = EntrySensor(1, True,car_park )
 exit_sensor = ExitSensor(2,True, car_park)
 display = Display(1, "Welcome to Moondalup", True, car_park)
-print(display)
 car_park.register(display)
 car_park.register(entry_sensor)
 car_park.register(exit_sensor)
@@ -24,3 +23,6 @@ for _ in range(10):
 
 for _ in range(2):
     exit_sensor.detect_vehicle()
+
+print(display)
+
